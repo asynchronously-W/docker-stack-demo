@@ -1,4 +1,5 @@
 import time
+from time import sleep
 
 from fastapi import FastAPI
 import socket
@@ -19,7 +20,7 @@ def get_hostname() -> dict[str, str]:
 def cpu_bound_task() -> dict[str, str]:
     start = time.time()
 
-    cpu = [_ for _ in range(100_000_000)]
+    sleep(3)
 
     elapsed_time = time.time() - start
 
