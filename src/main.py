@@ -10,14 +10,14 @@ app = FastAPI(
 
 
 @app.get("/hostname")
-def get_hostname() -> dict[str, str]:
+async def get_hostname() -> dict[str, str]:
     return {
         "hostname": socket.gethostname()
     }
 
 
 @app.get("/cpu")
-def cpu_bound_task() -> dict[str, str]:
+async def cpu_bound_task() -> dict[str, str]:
     start = time.time()
 
     sleep(3)
