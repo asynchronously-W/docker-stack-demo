@@ -20,7 +20,7 @@ async def main():
     for task in asyncio.as_completed(tasks):
         client, response = await task
 
-        print(f"Клиента {client} обработал контейнер: {response.json()['hostname']}")
+        print(f"[+] Клиента {client} обработал контейнер: {response.json()['hostname']}")
 
     elapsed_time = time.time() - start_time
 
